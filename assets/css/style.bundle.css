@@ -330,6 +330,11 @@ html[data-theme="light"] .theme-icon-moon {
   align-items: center;
 }
 
+.hero-copy,
+.hero-visual {
+  min-width: 0;
+}
+
 .hero-copy h1 {
   font-size: clamp(3.3rem, 7vw, 5.8rem);
   max-width: 760px;
@@ -1244,10 +1249,15 @@ html[data-theme="light"] .project-image::after {
 
   .hero-visual {
     min-height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
   }
 
   .main-shot {
     margin: 0 auto;
+    width: min(100%, 420px);
   }
 
   .timeline-item {
@@ -1310,8 +1320,22 @@ html[data-theme="light"] .project-image::after {
     padding-top: 140px;
   }
 
+  .hero-copy {
+    text-align: center;
+  }
+
   .hero-copy h1 {
     font-size: clamp(2.5rem, 11vw, 4.3rem);
+  }
+
+  .hero-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-roleline,
+  .hero-actions {
+    justify-content: center;
   }
 
   .hero-stats,
@@ -1330,8 +1354,8 @@ html[data-theme="light"] .project-image::after {
 
   .tech-pill {
     position: static;
-    margin-top: 16px;
     display: inline-flex;
+    margin-top: 0;
   }
 
   .footer-shell {
@@ -1343,6 +1367,40 @@ html[data-theme="light"] .project-image::after {
 @media (max-width: 479px) {
   .section {
     padding: 78px 0;
+  }
+
+  .hero-section {
+    padding-top: 126px;
+  }
+
+  .hero-grid {
+    gap: 28px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.3rem, 13vw, 3.4rem);
+    line-height: 1;
+  }
+
+  .hero-roleline {
+    min-height: 0;
+    font-size: 1.55rem;
+    line-height: 1.2;
+  }
+
+  .hero-role-dynamic {
+    white-space: normal;
+    padding-right: 10px;
+  }
+
+  .profile-frame {
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .hero-screen {
+    min-height: 0;
+    aspect-ratio: 1 / 1;
   }
 
   .skills-grid {
@@ -1366,5 +1424,9 @@ html[data-theme="light"] .project-image::after {
 
   .hero-actions {
     flex-direction: column;
+  }
+
+  .hero-stats {
+    gap: 14px;
   }
 }

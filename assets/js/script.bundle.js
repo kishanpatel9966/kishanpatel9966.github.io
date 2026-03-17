@@ -136,6 +136,16 @@
       return role.length > longest.length ? role : longest;
     }, "");
 
+    if (window.innerWidth <= 479) {
+      typingNode.style.minWidth = "0";
+      return;
+    }
+
+    if (window.innerWidth <= 767) {
+      typingNode.style.minWidth = Math.min(longestRole.length, 18) + "ch";
+      return;
+    }
+
     typingNode.style.minWidth = longestRole.length + 1 + "ch";
   }
 
@@ -186,6 +196,10 @@
     updateHeaderState();
     setActiveLink();
     revealOnScroll();
+  });
+
+  window.addEventListener("resize", function () {
+    stabilizeTypingWidth();
   });
 
   if (menuToggle) {
