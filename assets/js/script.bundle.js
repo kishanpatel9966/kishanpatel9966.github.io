@@ -39,7 +39,7 @@
     }
     window.setTimeout(function () {
       loader.classList.add("is-hidden");
-    }, 450);
+    }, 180);
   }
 
   function updateHeaderState() {
@@ -136,13 +136,8 @@
       return role.length > longest.length ? role : longest;
     }, "");
 
-    if (window.innerWidth <= 479) {
-      typingNode.style.minWidth = "0";
-      return;
-    }
-
     if (window.innerWidth <= 767) {
-      typingNode.style.minWidth = Math.min(longestRole.length, 18) + "ch";
+      typingNode.style.minWidth = "0";
       return;
     }
 

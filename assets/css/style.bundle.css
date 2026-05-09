@@ -42,6 +42,7 @@ html[data-theme="light"] {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -53,6 +54,7 @@ body {
     linear-gradient(180deg, #08101d 0%, #09111f 44%, #0d1320 100%);
   color: var(--text);
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 html[data-theme="light"] body {
@@ -407,6 +409,7 @@ html[data-theme="light"] .theme-icon-moon {
   justify-content: center;
   gap: 10px;
   min-width: 152px;
+  max-width: 100%;
   padding: 15px 24px;
   border-radius: 999px;
   border: 1px solid transparent;
@@ -1277,6 +1280,7 @@ html[data-theme="light"] .project-image::after {
 
   .nav-shell {
     min-height: 76px;
+    gap: 12px;
   }
 
   .menu-toggle {
@@ -1322,13 +1326,17 @@ html[data-theme="light"] .project-image::after {
 
   .hero-copy {
     text-align: center;
+    width: 100%;
   }
 
   .hero-copy h1 {
     font-size: clamp(2.5rem, 11vw, 4.3rem);
+    word-break: break-word;
   }
 
   .hero-intro {
+    width: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1336,6 +1344,7 @@ html[data-theme="light"] .project-image::after {
   .hero-roleline,
   .hero-actions {
     justify-content: center;
+    width: 100%;
   }
 
   .hero-stats,
@@ -1369,6 +1378,18 @@ html[data-theme="light"] .project-image::after {
     padding: 78px 0;
   }
 
+  .header-actions {
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle,
+  .menu-toggle {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
   .hero-section {
     padding-top: 126px;
   }
@@ -1386,11 +1407,18 @@ html[data-theme="light"] .project-image::after {
     min-height: 0;
     font-size: 1.55rem;
     line-height: 1.2;
+    width: 100%;
   }
 
   .hero-role-dynamic {
     white-space: normal;
     padding-right: 10px;
+    min-width: 0 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-intro {
+    font-size: 1rem;
   }
 
   .profile-frame {
@@ -1420,13 +1448,21 @@ html[data-theme="light"] .project-image::after {
 
   .btn {
     width: 100%;
+    min-width: 0;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .hero-actions {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .hero-stats {
     gap: 14px;
+  }
+
+  .hero-stats strong {
+    font-size: 1.55rem;
   }
 }
